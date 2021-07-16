@@ -52,6 +52,9 @@ export const logIn = async(req,res)=>{
     try{
         const hospital = await Hospital.findOne({hospitalEmail});
         if(hospital){
+            if(hospital.status=="inactive"){
+                res.send({"message":"Your account has not been verified"});
+            }
             const inDbPassword = hospital.password;
             const isPassword = await bcrypt.compare(password,inDbPassword);
             if(isPassword){

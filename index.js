@@ -4,6 +4,7 @@ import cors from "cors";
 import {hospitalRouter} from './routes/hospital.js';
 import {visitRouter} from './routes/visit.js';
 import {docRouter} from './routes/doctor.js';
+import dotenv from "dotenv/config" ;
 const app = express();
 const PORT = 5000;
 //mongodb url
