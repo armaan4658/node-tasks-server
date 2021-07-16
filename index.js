@@ -7,7 +7,7 @@ import {docRouter} from './routes/doctor.js';
 const app = express();
 const PORT = 5000;
 //mongodb url
-const url = "mongodb+srv://armaan:guvi123456@cluster0.qx8hr.mongodb.net/hospitalManagementSystem?retryWrites=true&w=majority"
+const url = process.env.MONGO_DB_URL;
 //connecting mongodb
 mongoose.connect(url,{useNewUrlParser:true});
 const con = mongoose.connection;
