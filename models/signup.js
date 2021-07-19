@@ -1,4 +1,3 @@
-import { Email } from "@material-ui/icons";
 import mongoose from "mongoose";
 const hospitalSchema = new mongoose.Schema({
     hospitalName:{
