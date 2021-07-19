@@ -6,7 +6,7 @@ import {visitRouter} from './routes/visit.js';
 import {docRouter} from './routes/doctor.js';
 import dotenv from "dotenv/config" ;
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT||5000;
 //mongodb url
 const url = process.env.MONGO_DB_URL;
 //connecting mongodb
