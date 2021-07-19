@@ -10,7 +10,7 @@ const PORT = 5000;
 //mongodb url
 const url = process.env.MONGO_DB_URL;
 //connecting mongodb
-mongoose.connect(url,{useNewUrlParser:true});
+mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology: true });
 const con = mongoose.connection;
 con.on("open", () => console.log("MongoDB is connected"));
 

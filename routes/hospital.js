@@ -1,12 +1,16 @@
 import express from "express";
 import {signUp, logIn, 
     hospitalUpdate, otpVerification, 
-    passwordResetLink} from '../modules/hospital.js';
+    passwordResetLink, getHospitalData} from '../modules/hospital.js';
 export const hospitalRouter = express.Router();
 
 //signup
 hospitalRouter.route('/signup')
 .post(signUp)
+
+//get hospital data
+hospitalRouter.route('/get/:id')
+.get(getHospitalData)
 
 //login
 hospitalRouter.route('/login')

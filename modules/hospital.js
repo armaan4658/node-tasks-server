@@ -73,6 +73,18 @@ export const logIn = async(req,res)=>{
 }
 
 
+//getting hospital data
+export const getHospitalData = async(req,res)=>{
+    try{
+        const {id} = req.params;
+        const data = await Hospital.findById(id);
+        res.send(data);
+    }catch(e){
+        res.send({"error":e});
+    }
+}
+
+
 //hospitalUpdate
 export const hospitalUpdate = async(req,res)=>{
     try{
@@ -93,7 +105,9 @@ export const hospitalUpdate = async(req,res)=>{
             hospital.hospitalEmail = hospitalEmail;
         }
         if(password){
-            hospital.password = password;
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(password,salt);
+            hospital.password = hashedPassword;
         }
         if(status){
             hospital.status = status;
