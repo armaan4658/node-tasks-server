@@ -25,4 +25,4 @@ app.get('/',(req,res)=>{
     res.send("Server is working");
 })
 
-app.listen(PORT,()=>console.log(`Server started at PORT : ${PORT}`));
+app.listen(PORT);
