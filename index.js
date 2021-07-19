@@ -16,13 +16,12 @@ con.on("open", () => console.log("MongoDB is connected"));
 
 app.use(express.json());
 app.use(cors())
+app.get('/',(req,res)=>{
+    res.send("Server is working");
+})
 
 app.use('/hospital',hospitalRouter);
 app.use('/visit',visitRouter);
 app.use('/doctor',docRouter);
-
-app.get('/',(req,res)=>{
-    res.send("Server is working");
-})
 
 app.listen(PORT,()=>console.log("Port started at: ",PORT));
