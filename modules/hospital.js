@@ -30,7 +30,7 @@ export const signUp = async(req,res)=>{
             await verify.save();
             const sub="Confirmation e-mail";
             const link = await bcrypt.genSalt(4);
-            const href=`http://localhost:3000/verifyaccount/${hos._id}`;
+            const href=`https://60f68444e1e5070007cc4210--boring-jennings-3916c1.netlify.app/verifyaccount/${hos._id}`;
             const message = `<b>Your one time password is : ${otp}</b><br/>
             Click the link below to verify your account<br/>
             <a href=${href}>${link} </a>`
@@ -172,7 +172,7 @@ export const passwordResetLink = async(req,res)=>{
         const hos = await Hospital.findOne({hospitalEmail})
         const salt = await bcrypt.genSalt(3);
         const sub ="Password reset";
-        const href=`http://localhost:3000/passwordreset/${hos._id}`;
+        const href=`https://60f68444e1e5070007cc4210--boring-jennings-3916c1.netlify.app/passwordreset/${hos._id}`;
         const message = `<b>Click the link below to reset your password : </b><br/>
         <a href=${href}>${salt} </a>`;
         //sending e-mail
