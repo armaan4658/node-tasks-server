@@ -4,6 +4,7 @@ import cors from "cors";
 import {hospitalRouter} from './routes/hospital.js';
 import {visitRouter} from './routes/visit.js';
 import {docRouter} from './routes/doctor.js';
+import {otpRouter} from './routes/otp.js';
 import dotenv from "dotenv/config" ;
 const app = express();
 const PORT = process.env.PORT||5000;
@@ -23,5 +24,6 @@ app.get('/',(req,res)=>{
 app.use('/hospital',hospitalRouter);
 app.use('/visit',visitRouter);
 app.use('/doctor',docRouter);
+app.use('/otp',otpRouter);
 
 app.listen(PORT,()=>console.log("Port started at: ",PORT));
