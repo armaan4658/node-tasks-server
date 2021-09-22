@@ -1,6 +1,6 @@
 import express from "express";
 export const otpRouter = express.Router();
-import {getOtp} from '../modules/otp.js';
+import {getOtp,deleteOtp} from '../modules/otp.js';
 
 otpRouter.route('/get').get(getOtp)
 
